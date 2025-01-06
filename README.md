@@ -2,7 +2,7 @@
 
 ## Overview
 
-Trial Kanban App is a simple yet effective Kanban dashboard designed for the day-to-day needs of small business teams. The app provides an intuitive interface for task management, allowing teams to track progress, collaborate efficiently, and stay organized.
+Trial Kanban App is a simple and effective Kanban dashboard designed for the day-to-day needs of small business teams. The app provides an intuitive interface for task management, allowing teams to track progress, collaborate efficiently, and stay organized.
 
 The goal of this project is to create a lightweight, easy-to-use tool that can be integrated into small-scale workflows without the complexity of larger enterprise solutions.
 
