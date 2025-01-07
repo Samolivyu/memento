@@ -4,16 +4,29 @@ import {
   ProjectOutlined,
 } from "@ant-design/icons";
 
-export const resources: IResourceItem[] = [
+export const resources: IResourceItem[] = 
+[
   
   {
     name: "tasks",
     list: "/",
     create: "/tasks/new",
     edit: "/tasks/edit/:id",
-    meta: {
+    meta: 
+    {
       label: "Tasks",
       icon: <ProjectOutlined />,
+    },
+    
+    {
+      name: "admin",
+      list: "/admin",
+      meta: 
+      {
+        label: "Admin Panel",
+        canDelete: false,
+        roles: ["admin"], // This resource will only be visible to admins
+      },
     },
   },
 ];
