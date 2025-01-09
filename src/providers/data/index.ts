@@ -1,10 +1,5 @@
-import graphqlDataProvider, {
-  GraphQLClient,
-  liveProvider as graphqlLiveProvider,
-} from "@refinedev/nestjs-query";
-
+import graphqlDataProvider, {  GraphQLClient, liveProvider as graphqlLiveProvider, } from "@refinedev/nestjs-query";
 import { createClient } from "graphql-ws";
-
 import { fetchWrapper } from "./fetch-wrapper";
 
 export const API_BASE_URL = "https://api.crm.refine.dev";

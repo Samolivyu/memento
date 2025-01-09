@@ -1,28 +1,22 @@
 import { BrowserRouter, Outlet, Route, Routes } from "react-router";
 import { RefineThemes, useNotificationProvider } from "@refinedev/antd";
-import { Authenticated, ErrorComponent, Refine } from "@refinedev/core";
+import { Authenticated, ErrorComponent, LoginPage, Refine } from "@refinedev/core";
 import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
-import routerProvider, {
-  CatchAllNavigate,
-  DocumentTitleHandler,
-  NavigateToResource,
-  UnsavedChangesNotifier,
-} from "@refinedev/react-router";
+import routerProvider, {  CatchAllNavigate, DocumentTitleHandler, NavigateToResource, UnsavedChangesNotifier, } from "@refinedev/react-router";
 import { App as AntdApp, ConfigProvider } from "antd";
 
 import { Layout } from "@/components";
-import { AdminProps } from "@/routes/admin/Admin"; 
+import { Admin, AdminProps } from "@/routes/admin/Admin"; 
 import { resources } from "@/config/resources";
 import { authProvider, dataProvider, liveProvider } from "@/providers";
-import {
-  LoginPage,
-  TasksCreatePage,
-  TasksEditPage,
-  TasksListPage,
-  AdminProps,
-  } from "@/routes";
+// export { LoginPage } from "./routes/login/index";
+export { TasksCreatePage } from "./routes/tasks/create/index";
+export { TasksEditPage } from "./routes/tasks/edit/index";
+export { TasksListPage } from "./routes/tasks/list/index";
 
 import "@refinedev/antd/dist/reset.css";
+import { TasksCreatePage, TasksEditPage, TasksListPage } from "./routes/tasks/index";
+import { AdminKanban } from "./routes/admin/AdminKanban";
 
 const App = () => {
   return (
@@ -65,19 +59,16 @@ const App = () => {
                     <Route path="edit/:id" element={<TasksEditPage />} />
                   </Route>
 
-                  {/* Admin Routes */}
-                  <Route
-                    path="/admin"
+                  <Route path="/admin"
                     element={
-                      <AdminProps roles={["admin"]}>
+                      <Admin roles={["admin"]}>
                         <Outlet />
-                      </AdminProps>
+                      </Admin>
                     }
                   >
-                    <Route index element={<AdminProps />} />
-                    <Route path="kanban" element={<AdminProps />} />
+                    <Route index element={<Admin children={undefined} />} />
+                    <Route path="kanban" element={<AdminKanban />} />
                   </Route>
-
                   <Route path="*" element={<ErrorComponent />} />
                 </Route>
 

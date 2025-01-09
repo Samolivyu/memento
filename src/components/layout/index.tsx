@@ -2,7 +2,7 @@ import React from "react";
 import { ThemedLayoutV2, ThemedTitleV2 } from "@refinedev/antd";
 import { useGetIdentity } from "@refinedev/core";
 import { Header } from "./header";
-import { Link } from "@refinedev/react-router"; 
+import { Link } from "react-router"; 
 
 export const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
   const { data: user } = useGetIdentity<{ roles: string[] }>();

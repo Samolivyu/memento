@@ -1,17 +1,16 @@
-import { AuthPage, ThemedTitleV2 } from "@refinedev/antd";
+import type { IResourceItem } from "@refinedev/core";
+import { ProjectOutlined } from "@ant-design/icons";
 
-import { authCredentials } from "@/providers";
 
-export const LoginPage = () => {
-  return (
-    <AuthPage
-      type="login"
-      registerLink={false}
-      forgotPasswordLink={false}
-      title={<ThemedTitleV2 collapsed={false} text="Ibebe Gaming" />}
-      formProps={{
-        initialValues: authCredentials,
-      }}
-    />
-  );
-};
+export const resources: IResourceItem[] = [
+  {
+    name: "tasks",
+    list: "/",
+    create: "/tasks/new",
+    edit: "/tasks/edit/:id",
+    meta: {
+      label: "Tasks",
+      icon: <ProjectOutlined />,
+    },
+  },
+];
